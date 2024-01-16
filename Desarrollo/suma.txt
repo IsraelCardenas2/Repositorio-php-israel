@@ -1,0 +1,14 @@
+
+$time = 0.05;
+$costo = 1;
+do {
+   $costo ++;
+   $inicio = microtime(true);
+    password_hash("test", PASSWORD_BCRYPT,["cost"=>$costo]);
+   $fin = microtime(true);
+   }
+
+
+while(($fin - $inicio)< $time){
+     echo "Costo apropiado encontrado: " .$costo."\n";
+      

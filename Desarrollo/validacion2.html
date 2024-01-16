@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario  con HTML5 YCSS3</title>
+    <link rel="stylesheet" href="css/estilos_formulario.css">
+</head>
+<body>
+    <div class="contenedor">
+        <label for="titulo" class="titulo">Registro de Usuarios</label> 
+        <form action="alta_usuario.php" onsubmit="return validarFormulario()" class="formulario"  name="formulario" method="post" >
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre" placeholder="Escribe tu nombre" class="form-control"  required>
+            <span class="error-message" id="nombreError">Nombre invalido, solo puede contener letras, iniciando con una letra mayúscula y debe de tener una longitud de 3 caracteres.</span>
+
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" name="apellidos" id="apellidos" placeholder="Escribe tus apellidos" class="form-control"  required>
+            <span class="error-message" id="apellidosError">Apellidos invalidos. debe de iniciar con una letra mayúscula después letras minúsculas, seguido un espacio, después otra letra mayúscula y mas letras minúsculas.</span>
+
+            <label for="genero">Seleccione su género:</label>
+            <div class="radio">
+                <input type="radio" name="genero" id="H" value="M" required>
+                <label for="H" id="mas">Masculino</label>
+                <input type="radio" name="genero" id="M" value="F">
+                <label for="M" id="fem">Femenino</label>
+            </div>
+            <span class="error-message" id="generoError">Selecciona un género.</span>
+
+            <label for="#domicilio">Domicilio</label>
+            <input type="text" name="domicilio" id="domicilio" placeholder="Describe la dirección de tu domicilio" class="form-control" required>
+
+            <label for="#usuario">Usuario</label>
+            <input type="text" name="usuario" id="usuario" placeholder="Describe el nombre para tu usario" class="form-control">
+            <p class="error" id="usuarioError" style="color:red;"></p>
+
+            <label for="#contrasena">Contraseña</label>
+            <input type="password" name="contrasena" id="contrasena" placeholder="Describe una contraseña" class="form-control">
+            <p class="error" id="contrasenaError" style="color:red;"></p>
+
+            <div class="checkbox">
+                <input type="checkbox" name="checkbox" id="checkbox" class="form-control"  required>
+                <label for="checkbox">Acepto terminos y condiciones</label>
+                <span class="error-message" id="terminosError">Acepta los términos y condiciones.</span>
+            </div>
+
+            <div class="btn-group">
+                <input type="reset" value="Cancelar" class="cancelar">
+                <input type="submit" value="Registrar" class="guardar">
+                
+            </div>
+        </form>
+    </div>
+    <script src="js/instrucciones.js"></script>
+</body>
+</html>
